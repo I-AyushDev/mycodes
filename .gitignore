@@ -1,0 +1,21 @@
+//write a recursive function to find sum of digits of a gven number
+#include<stdio.h>
+int dev_sum(int);
+main()
+{
+	
+	int n;
+	printf("Enter the number\n");
+	scanf("%d",&n);
+	
+	printf("sum of digits of %d is %d",n,dev_sum(n));
+}
+dev_sum(int a)
+{
+	static int f;
+	if(a==0)
+	return 0;
+	f=f+a%10+dev_sum(a/10);
+	return f;
+	
+}
